@@ -132,6 +132,14 @@ version = "0.5.0"
 source = "git+https://github.com/micahrj/clap-sys.git?rev=25d7f53fdb6363ad63fbd80049cb7a42a97ac156#25d7f53fdb6363ad63fbd80049cb7a42a97ac156"
 
 [[package]]
+name = "compressor"
+version = "0.1.0"
+dependencies = [
+ "nih_plug",
+ "vocal-fx-common",
+]
+
+[[package]]
 name = "core-foundation"
 version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -204,12 +212,27 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d0a5c400df2834b80a4c3327b3aad3a4c4cd4de0629063962b03235697506a28"
 
 [[package]]
+name = "delay"
+version = "0.1.0"
+dependencies = [
+ "nih_plug",
+]
+
+[[package]]
 name = "deranged"
 version = "0.5.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7cd812cc2bc1d69d4764bd80df88b4317eaef9e773c75226407d9bc0876b211c"
 dependencies = [
  "powerfmt",
+]
+
+[[package]]
+name = "eq"
+version = "0.1.0"
+dependencies = [
+ "nih_plug",
+ "vocal-fx-common",
 ]
 
 [[package]]
@@ -223,6 +246,14 @@ name = "gain"
 version = "0.1.0"
 dependencies = [
  "nih_plug",
+]
+
+[[package]]
+name = "gate"
+version = "0.1.0"
+dependencies = [
+ "nih_plug",
+ "vocal-fx-common",
 ]
 
 [[package]]
@@ -506,6 +537,13 @@ source = "git+https://github.com/nicokoch/reflink.git?rev=e8d93b465f5d9ad340cd05
 dependencies = [
  "libc",
  "winapi",
+]
+
+[[package]]
+name = "reverb"
+version = "0.1.0"
+dependencies = [
+ "nih_plug",
 ]
 
 [[package]]

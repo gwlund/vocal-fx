@@ -2,6 +2,11 @@
 resolver = "2"
 members = [
     "plugins/gain",
+    "plugins/gate",
+    "plugins/eq",
+    "plugins/compressor",
+    "plugins/delay",
+    "plugins/reverb",
     "common",
     "xtask",
 ]

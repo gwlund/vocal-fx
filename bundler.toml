@@ -1,2 +1,17 @@
 [gain]
 name = "Vocal FX Gain"
+
+[gate]
+name = "Vocal FX Gate"
+
+[eq]
+name = "Vocal FX EQ"
+
+[compressor]
+name = "Vocal FX Compressor"
+
+[delay]
+name = "Vocal FX Delay"
+
+[reverb]
+name = "Vocal FX Reverb"
