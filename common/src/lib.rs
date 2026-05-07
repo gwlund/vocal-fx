@@ -2,3 +2,4 @@
 
 pub mod envelope;
 pub mod biquad;
+pub mod ring_buffer;

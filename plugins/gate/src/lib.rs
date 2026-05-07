@@ -17,6 +17,8 @@ struct Gate {
     hold_counter: Vec<u32>,
     /// Current gate state per channel (0.0 = closed, 1.0 = open)
     gate_level: Vec<f32>,
+    /// Actual sample rate from host
+    sample_rate: f32,
 }
 
 #[derive(Params)]
@@ -41,6 +43,7 @@ impl Default for Gate {
             envelope: Vec::new(),
             hold_counter: Vec::new(),
             gate_level: Vec::new(),
+            sample_rate: 44100.0,
         }
     }
 }
@@ -142,6 +145,7 @@ impl Plugin for Gate {
             .map(|c| c.get() as usize)
             .unwrap_or(2);
 
+        self.sample_rate = buffer_config.sample_rate;
         self.envelope = (0..num_channels)
             .map(|_| EnvelopeFollower::new(buffer_config.sample_rate))
             .collect();
@@ -176,8 +180,7 @@ impl Plugin for Gate {
         }
 
         // Hold time in samples
-        let sample_rate = self.envelope.first().map(|_| 44100.0).unwrap_or(44100.0);
-        let hold_samples = (hold_ms * 0.001 * sample_rate) as u32;
+        let hold_samples = (hold_ms * 0.001 * self.sample_rate) as u32;
 
         for mut channel_samples in buffer.iter_samples() {
             for (ch, sample) in channel_samples.iter_mut().enumerate() {
